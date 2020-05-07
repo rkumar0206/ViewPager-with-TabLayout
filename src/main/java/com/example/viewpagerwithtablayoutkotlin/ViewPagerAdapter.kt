@@ -1,0 +1,29 @@
+package com.example.viewpagerwithtablayoutkotlin
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+
+class ViewPagerAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragment) {
+
+
+    override fun createFragment(position: Int): Fragment {
+
+        return when(position){
+
+            0-> AndroidFragment()
+
+            1-> AssistantFragment()
+
+            2-> ArchiveFragment()
+
+            else -> AnnouncementFragment()
+
+        }
+
+    }
+
+    override fun getItemCount(): Int = 4
+
+
+}
